@@ -1,0 +1,429 @@
+@charset 'utf-8';
+
+:root {
+  --mw: 1400px;
+  --gap-s: 1rem;
+  --gap-b: 4rem;
+}
+.mw {
+  /* border-top: 1px solid red; */
+  max-width: var(--mw);
+  width: calc(100% - var(--gap-s));
+  margin: var(--gap-b) auto;
+}
+
+/* Header */
+.hd {
+  margin: 2rem auto 1rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.hd.bar::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background-color: #eee;
+  bottom: 0;
+}
+.hd h1 {
+  width: 150px;
+}
+.hd h1 img {
+  width: 100%;
+}
+.hd .gnb {
+  /* background-color: beige; */
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: var(--gap-s);
+  position: relative;
+}
+.hd .gnb::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 50%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  background-color: #707070;
+}
+.hd .gnb a {
+  padding: var(--gap-s);
+  transition: 0.3s;
+}
+.hd .gnb a:hover {
+  background-color: #eee;
+}
+.hd .gnb a.on {
+  background-color: rgba(255, 71, 71, 0.705);
+  color: #eee;
+}
+.hd .person {
+  padding-left: var(--gap-s);
+  color: #999;
+}
+.hd .person a {
+  display: inline-block;
+  padding: var(--gap-s);
+  transition: 0.3s;
+}
+.hd .person a:hover {
+  color: black;
+}
+
+/* Main - MainEvent */
+.mainEvent .eventList {
+  padding-top: 40%;
+  /* height: 100%; */
+  position: relative;
+  border-radius: var(--gap-s);
+  overflow: hidden;
+}
+.mainEvent .swiper-slide img {
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+}
+.mainEvent .swiper-slide:nth-of-type(1) img {
+  top: 0;
+  left: 0;
+}
+.mainEvent .swiper-slide:nth-of-type(2) img {
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+.mainEvent .swiper-slide:nth-of-type(3) img {
+  top: 0;
+  left: 0;
+}
+.mainEvent .eventInfo {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-5%, -50%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.mainEvent .eventInfo p {
+  margin-bottom: var(--gap-s);
+  font-size: 2rem;
+}
+.mainEvent .eventInfo button {
+  width: 150px;
+  padding: var(--gap-s) 2rem;
+  outline: none;
+  border: 1px solid white;
+  color: white;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.mainEvent .eventInfo button:hover {
+  background-color: rgba(255, 255, 255, 0.692);
+  color: black;
+}
+
+/* Main - MainTopList 메인 상위(Top) 상품*/
+.mainTopList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainTopList h2 {
+  padding: var(--gap-s) 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.mainTopList .listCon {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  /* border: 1px solid sienna; */
+}
+.mainTopList .listCon > .list {
+  width: calc((100% / 3) - var(--gap-s));
+  margin-right: calc(var(--gap-s) + (var(--gap-s) / 2));
+  /* border: 1px solid sandybrown; */
+  margin-bottom: var(--gap-s);
+  position: relative;
+}
+.mainTopList .listCon > .list:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* Shop */
+.shop {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.shop h2 {
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: var(--gap-s) 0;
+}
+.shop .btnCon {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.shop .btnCon .btn {
+  width: 100%;
+  padding: var(--gap-s) 0;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: rgb(255, 233, 219);
+  transition: 0.3s;
+}
+.shop .btnCon .btn:hover {
+  background-color: rgb(252, 211, 185);
+}
+.shop .listCon {
+  width: calc((100% - 200px) - 2rem);
+  display: flex;
+  flex-wrap: wrap;
+}
+.shop .listCon > .list {
+  width: calc((100% / 4) - var(--gap-s));
+  margin-right: calc(var(--gap-s) + (var(--gap-s) / 3));
+  margin-bottom: var(--gap-s);
+  position: relative;
+}
+.shop .listCon > .list:nth-child(4n) {
+  margin-right: 0;
+}
+
+/* Detail - detailCon*/
+.detail .detailCon {
+  display: flex;
+  justify-content: space-between;
+}
+.detail .detailCon .img {
+  width: 45%;
+  /* padding-top: 100%; */
+  /* height: 100%; */
+  /* position: relative; */
+}
+.detail .detailCon .img img {
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 0; */
+  /* object-fit: cover; */
+  /* height: 100%; */
+  width: 100%;
+}
+.detail .detailCon .info {
+  width: calc(55% - var(--gap-b));
+  padding: 3rem 0;
+}
+.detail .detailCon .pdTitle {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: var(--gap-s);
+}
+.detail .detailCon .pdPrice {
+  font-size: 20px;
+  font-weight: bold;
+  color: #a18a68;
+  margin-bottom: var(--gap-b);
+}
+.detail .detailCon .pdNum {
+  margin-bottom: var(--gap-s);
+}
+.detail .detailCon .pdDetail {
+  line-height: 2;
+  margin-bottom: var(--gap-b);
+}
+.detail .detailCon .pdDiscount {
+  margin-bottom: var(--gap-s);
+  color: rgba(255, 71, 71, 0.705);
+}
+
+/* Detail - TabUi */
+.mb-3 {
+  margin: var(--gap-b) 0;
+}
+
+/* 상품카드 영역 */
+.card {
+  border-radius: var(--gap-s);
+  overflow: hidden;
+}
+.card .img {
+  /* border: 1px solid tomato; */
+  overflow: hidden;
+  position: relative;
+  padding-top: 100%;
+}
+.card .img > * {
+  position: absolute;
+}
+.card .img img {
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+.card .img .addCart {
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.76);
+  bottom: -50%;
+  width: 100%;
+  padding: var(--gap-s);
+  text-align: center;
+  transition: 0.3s;
+}
+.card:hover .addCart {
+  bottom: 0;
+}
+.card .img .discount {
+  top: 8px;
+  right: 8px;
+  background-color: rgba(255, 71, 71, 0.705);
+  color: #eee;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .btnAdd {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background-color: rgba(0, 0, 0, 0.329); */
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  opacity: 0;
+  transition: 0.3s;
+}
+.card:hover .btnAdd {
+  opacity: 1;
+}
+.card .detail {
+  padding: var(--gap-s);
+  font-size: 20px;
+}
+.card .detail p:first-of-type {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.card .detail p:last-of-type {
+  color: #a18a68;
+}
+
+/* Footer */
+.ft {
+  padding-top: 1rem;
+  border-top: 1px solid #d8d8d8;
+  margin: 100px auto 80px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ft > div {
+  width: 100%;
+  /* border: 1px solid blue; */
+}
+.ft .topCon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ft .topLink {
+  display: flex;
+  align-items: center;
+}
+.ft .topLink li a {
+  color: #707070;
+  transition: 0.3s;
+}
+.ft .topLink li a:nth-of-type(1) {
+  margin-right: 1rem;
+}
+.ft .topLink li a:nth-of-type(2) {
+  margin: 0 1rem;
+}
+.ft .topLink li a:nth-of-type(3) {
+  margin: 0 1rem;
+}
+.ft .topLink li a:hover {
+  /* color: rgb(250, 162, 62); */
+  color: black;
+}
+.ft .emailCon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 1rem 0;
+  width: 30%;
+  color: #707070;
+  cursor: pointer;
+  position: relative;
+}
+.ft .fa-arrow-right-long {
+  position: absolute;
+  right: 5%;
+  transition: 0.3s;
+}
+.ft .emailCon:hover .fa-arrow-right-long {
+  right: 0;
+}
+.ft .bottomCon {
+  /* border: 1px solid red; */
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.ft .copyRight span:nth-of-type(2) {
+  margin: 0 0.25rem;
+  font-weight: bold;
+}
+.ft .copyRight span:nth-of-type(3) {
+  color: #707070;
+}
+.ft .copyRight span:nth-of-type(4) {
+  margin: 0 0.25rem;
+  font-weight: bold;
+}
+.ft .copyRight span:nth-of-type(5) {
+  color: #707070;
+}
+.ft .snsLink {
+  display: flex;
+  align-items: center;
+}
+.ft .snsLink li a {
+  margin: 1rem;
+  padding: 0.5rem;
+  color: #707070;
+  transition: 0.3s;
+}
+.ft .snsLink li a:hover {
+  /* color: rgb(250, 162, 62); */
+  color: black;
+}
