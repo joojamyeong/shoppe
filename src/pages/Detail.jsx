@@ -35,9 +35,8 @@ function Detail({ data }) {
           <p className="pdDiscount">{data[id].discount}% 할인</p>
 
           <Count />
-          <Count />
 
-          {/* <button type="submit">주문하기</button> */}
+          <button type="submit">주문하기</button>
         </div>
       </div>
       <TabUi></TabUi>
