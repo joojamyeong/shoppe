@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 
 function ProductCard({ data }) {
+  // 숫자에 쉼표를 추가하는 함수
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat().format(Number(price.replace(/,/g, "")));
+  };
+
   return (
     <div className="card">
       <div className="img">
@@ -16,7 +21,7 @@ function ProductCard({ data }) {
       <div className="detail">
         <p>{data.title}</p>
         <p>
-          {data.price} <span>원</span>
+          {formatPrice(data.price)} <span>원</span>
         </p>
       </div>
       <Link to={`/Detail/${data._id}`} className="btnAdd">

@@ -43,7 +43,7 @@ let list = [
     _id: 6,
     title: "14k/18k 티얼스 라운드 큐빅 여성 체인 목걸이",
     img: "image6.jpg",
-    price: "310000",
+    price: "31000",
     category: "top",
     discount: "5",
   },

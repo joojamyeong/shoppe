@@ -22,7 +22,7 @@ function Detail({ data }) {
         </div>
         <div className="info">
           <h3 className="pdTitle">{data[id].title}</h3>
-          <p className="pdPrice">{data[id].price}원</p>
+          <p className="pdPrice">{Number(data[id].price).toLocaleString()}원</p>
           <p className="pdNum">{data[id]._id}번 상품</p>
           <p className="pdDetail">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed at
@@ -36,7 +36,7 @@ function Detail({ data }) {
 
           <Count />
 
-          <button type="submit">주문하기</button>
+          <button type="submit">카트에 담기</button>
         </div>
       </div>
       <TabUi></TabUi>
