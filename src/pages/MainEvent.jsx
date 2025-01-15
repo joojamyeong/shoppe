@@ -21,7 +21,7 @@ function MainEvent() {
         <SwiperSlide>
           <div className="eventList">
             <img
-              src={`${process.env.PUBLIC_URL}/img/img_bg1.jpg`}
+              src={`${process.env.PUBLIC_URL}/img/Img_bg1.jpg`}
               alt="event01"
             />
             <div className="eventInfo">
