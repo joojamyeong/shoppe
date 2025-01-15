@@ -21,7 +21,7 @@ function MainEvent() {
         <SwiperSlide>
           <div className="eventList">
             <img
-              src={`${process.env.PUBLIC_URL}/img/img_bg1.jpg`}
+              src={`${process.env.PUBLIC_URL}/img/Img_bg1.jpg`}
               alt="event01"
             />
             <div className="eventInfo">
@@ -33,7 +33,7 @@ function MainEvent() {
         <SwiperSlide>
           <div className="eventList">
             <img
-              src={`${process.env.PUBLIC_URL}/img/img_bg2.jpg`}
+              src={`${process.env.PUBLIC_URL}/img/Img_bg2.jpg`}
               alt="event02"
             />
             <div className="eventInfo">
@@ -45,7 +45,7 @@ function MainEvent() {
         <SwiperSlide>
           <div className="eventList">
             <img
-              src={`${process.env.PUBLIC_URL}/img/img_bg3.jpg`}
+              src={`${process.env.PUBLIC_URL}/img/Img_bg3.jpg`}
               alt="event03"
             />
             <div className="eventInfo">
