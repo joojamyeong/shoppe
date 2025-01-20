@@ -7,6 +7,8 @@ import Detail from "./pages/Detail";
 import Footer from "./pages/Footer";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useState } from "react";
+import Cart from "./pages/Cart";
+import { CartProvider } from "./pages/CartContext"; 
 
 function App() {
   let subName = useLocation().pathname;
@@ -15,23 +17,26 @@ function App() {
   let [data] = useState(list);
 
   return (
-    <div className="App">
-      <Header subName={subName}></Header>
+    <CartProvider> 
+      <div className="App">
+        <Header subName={subName}></Header>
 
-      <Routes>
-        <Route path="/" element={<Main data={data}></Main>}></Route>
-        <Route path="/Shop" element={<Shop data={data}></Shop>}></Route>
-        <Route
-          path="/Detail/:id"
-          element={<Detail data={data}></Detail>}
-        ></Route>
-        <Route path="/Blog" element={<div>블로그</div>}></Route>
-        <Route path="/Story" element={<div>스토리</div>}></Route>
-        <Route path="*" element={<div>404 페이지</div>}></Route>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Main data={data}></Main>}></Route>
+          <Route path="/Shop" element={<Shop data={data}></Shop>}></Route>
+          <Route
+            path="/Detail/:id"
+            element={<Detail data={data}></Detail>} 
+          ></Route>
+          <Route path="/Cart" element={<Cart />}></Route>
+          <Route path="/Blog" element={<div>블로그</div>}></Route>
+          <Route path="/Story" element={<div>스토리</div>}></Route>
+          <Route path="*" element={<div>404 페이지</div>}></Route>
+        </Routes>
 
-      <Footer></Footer>
-    </div>
+        <Footer></Footer>
+      </div>
+    </CartProvider>
   );
 }
 
